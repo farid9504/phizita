@@ -1,0 +1,32 @@
+.stepCircle {
+  @apply mx-auto w-[32px] h-[32px] rounded-[50%];
+
+  @apply flex justify-center items-center;
+
+  &.default {
+    @apply bg-[var(--neutral-04)] text-[var(--neutral-09)];
+  }
+
+  &.active {
+    @apply bg-[var(--accents-04)] text-[var(--accents-11)];
+  }
+
+  &.successful {
+    @apply bg-[var(--accents-09)] text-[#fff];
+  }
+}
+.stepTitle {
+  @apply mt-[8px] text-[14px];
+
+  &.default {
+    @apply text-[var(--neutral-09)];
+  }
+
+  &.active {
+    @apply text-[var(--accents-07)];
+  }
+
+  &.successful {
+    @apply text-[var(--accents-09)];
+  }
+}

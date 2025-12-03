@@ -1,0 +1,8 @@
+[data-theme="light"] {
+  --defaultColor: 255, 255, 255;
+  --oppositeColor: 0, 0, 0;
+  --shadow-md: 0px 4px 8px 0px #00000024, 0px 0px 2px 0px #0000001f;
+  @import "semantics.scss";
+  @import "accents.scss";
+  @import "neutral.scss";
+}

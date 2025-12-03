@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import "globalVariables.scss";
+
+/* Define the font using @font-face */
+@font-face {
+  font-family: "iran-sans";
+  src: url("fonts/IranSans/IRANSansX-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  @apply h-[0px] md:h-[2px] lg:h-[4px];
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+* {
+  font-family: "iran-sans", sans-serif;
+}

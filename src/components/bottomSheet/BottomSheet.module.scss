@@ -1,0 +1,34 @@
+.default {
+  @apply text-[var(--oppositeColor)] bg-[rgb(var(--defaultColor))] border-[var(--neutral-04)];
+  &[aria-disabled="false"] {
+    &:hover {
+      @apply bg-[var(--neutral-02)] border-[var(--neutral-05)];
+    }
+    &:active {
+      @apply bg-[var(--neutral-03)] border-[var(--neutral-06)];
+    }
+  }
+}
+.alert {
+  @apply text-[var(--semantics-red-09)] bg-[rgb(var(--defaultColor))] border-[var(--neutral-04)];
+  &[aria-disabled="false"] {
+    &:hover {
+      @apply border-[var(--neutral-05)] bg-[var(--neutral-02)];
+    }
+    &:active {
+      @apply border-[var(--neutral-06)] bg-[var(--neutral-03)];
+    }
+  }
+}
+
+.selected {
+  @apply bg-[var(--accents-02)] border-[2px] border-[var(--accents-11)];
+  &[aria-disabled="false"] {
+    &:hover {
+      @apply bg-[var(--accents-03)];
+    }
+    &:active {
+      @apply bg-[var(--accents-04)] border-[var(--accents-12)];
+    }
+  }
+}

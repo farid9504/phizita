@@ -1,0 +1,7 @@
+.logo {
+  @apply text-[var(--accents-09)] opacity-[.15] absolute;
+  @apply left-[16px] w-[136px] h-[136px];
+  path {
+    @apply scale-[2.8];
+  }
+}

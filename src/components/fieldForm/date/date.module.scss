@@ -1,0 +1,26 @@
+.date {
+  .nav {
+    @apply w-full flex justify-between;
+    direction: ltr;
+
+    .nextPrevious {
+      @apply w-[40px] h-[40px] border border-[#d9d9d9];
+      @apply flex justify-center items-center;
+      @apply cursor-pointer text-[var(--defaultColor)] rounded-full;
+
+      &[aria-disabled="true"] {
+        @apply opacity-[.3] cursor-not-allowed;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .monthCaption {
+    @apply absolute top-[4px] left-[40px] right-[40px] justify-center flex;
+  }
+
+  .todayButton {
+    @apply border-[var(--accents-09)] bg-[var(--accents-02)] text-[var(--accents-11)];
+    font-weight: 500;
+  }
+}

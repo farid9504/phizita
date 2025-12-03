@@ -1,0 +1,19 @@
+.item {
+  @apply py-[8px] px-[16px] h-[42px];
+  @apply flex items-center;
+  
+  // hover and active
+  &[aria-disabled="false"] {
+    &:hover {
+      @apply bg-[var(--neutral-03)];
+    }
+    &:active {
+      @apply bg-[var(--neutral-04)];
+    }
+  }
+
+  // disabled
+  &[aria-disabled="true"] {
+    @apply opacity-50;
+  }
+}
