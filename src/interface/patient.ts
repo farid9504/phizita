@@ -1,9 +1,9 @@
 import { FormikHelpers } from "formik";
 import { IFieldDate, IFiledUpload, IValueFieldSelect } from "./fieldForm";
 
-export interface IheaderAddPatient {
+export interface IHeaderAddPatient {
   title: string;
-  status: "default" | "active" | "successful";
+  // status: "default" | "active" | "successful";
 }
 export interface IAddPatientGeneralInfo {
   firstName: string;

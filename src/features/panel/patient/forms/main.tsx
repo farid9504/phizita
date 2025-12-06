@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import GeneralInfo from "./generalInfo";
 import PatientCondition from "./patientCondition";
 import { useForms } from "./hooks/useForms";
-// import TreatmentPeriod from "./treatmentPeriod";
+import TreatmentPeriod from "./treatmentPeriod";
 
 export default function FormAddPatient({
   step,
@@ -11,12 +11,8 @@ export default function FormAddPatient({
   step: number;
   setStep: Dispatch<SetStateAction<number>>;
 }) {
-  const {
-    generalSubmit,
-    patientConditionSubmit,
-    formData,
-    // treatmentPeriodSubmit,
-  } = useForms(setStep);
+  const { generalSubmit, conditionSubmit, formData, treatmentSubmit, preStep } =
+    useForms(setStep);
   return (
     <div className="w-full  h-full overflow-hidden">
       <div className="w-full mx-auto h-full">
@@ -25,15 +21,19 @@ export default function FormAddPatient({
         )}
         {step === 2 && (
           <PatientCondition
-            setStep={setStep}
-            onSubmit={patientConditionSubmit}
+            preStep={preStep}
+            onSubmit={conditionSubmit}
             data={formData.patientCondition}
           />
         )}
 
-        {/* {step === 3 && (
-          <TreatmentPeriod onSubmit={treatmentPeriodSubmit} setStep={setStep} />
-        )} */}
+        {step === 3 && (
+          <TreatmentPeriod
+            onSubmit={treatmentSubmit}
+            preStep={preStep}
+            data={formData.treatmentPeriod}
+          />
+        )}
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
-import ContentAddPatient from "@/features/panel/patient/forms";
-export default function AddPatient() {
+import AddPatient from "@/features/panel/patient/forms";
+export default function Add() {
   return (
     <div className="w-fll h-full">
-      <ContentAddPatient />
+      <AddPatient />
     </div>
   );
 }

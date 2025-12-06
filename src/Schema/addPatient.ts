@@ -65,6 +65,6 @@ export const initialTreatmentPeriod: IAddTreatmentPeriod = {
   physiotherapistName: "",
   treatmentSessions: null,
   treatmentStartDate: "",
-  basicInsurance: { value: "", label: "" },
-  supplementaryInsurance: { value: "", label: "" },
+  basicInsurance: null,
+  supplementaryInsurance: null,
 };

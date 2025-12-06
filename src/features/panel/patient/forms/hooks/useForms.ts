@@ -28,19 +28,22 @@ export function useForms(setStep: Dispatch<SetStateAction<number>>) {
     Next();
   };
 
-  const patientConditionSubmit = (data: IAddPatientCondition) => {
+  const conditionSubmit = (data: IAddPatientCondition) => {
     setFormData((prev) => ({ ...prev, patientCondition: data }));
     Next();
   };
 
-  const treatmentPeriodSubmit = (data: IAddTreatmentPeriod) => {
+  const treatmentSubmit = (data: IAddTreatmentPeriod) => {
     setFormData((prev) => ({ ...prev, treatmentPeriod: data }));
   };
+
+  const preStep = () => setStep((p) => p - 1);
 
   return {
     formData,
     generalSubmit,
-    patientConditionSubmit,
-    treatmentPeriodSubmit,
+    conditionSubmit,
+    treatmentSubmit,
+    preStep,
   };
 }

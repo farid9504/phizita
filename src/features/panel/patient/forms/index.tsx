@@ -3,8 +3,8 @@ import { useState } from "react";
 import FormPatient from "./main";
 import HeaderPatient from "./header";
 
-export default function ContentAddPatient() {
-  const [step, setStep] = useState<number>(1);
+export default function AddPatient() {
+  const [step, setStep] = useState<number>(3);
   return (
     <div className="w-full h-full flex flex-col">
       <HeaderPatient step={step} />

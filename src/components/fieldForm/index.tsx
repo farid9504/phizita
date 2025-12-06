@@ -1,25 +1,15 @@
-import React, { useState, useCallback, useMemo, FC } from "react";
+import React, { useMemo, FC } from "react";
 import styles from "./FieldForm.module.scss";
 import TextField from "@mui/material/TextField";
-import { useId } from "react";
 import { IFieldForm } from "@/interface/fieldForm";
 import { CacheProvider } from "@emotion/react";
-import createCache from "@emotion/cache";
-import { prefixer } from "stylis";
-import rtlPlugin from "stylis-plugin-rtl";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { IconButton, InputAdornment } from "@mui/material";
 import { textFieldStyles } from "./select/style";
 import ShowIcon from "@/icons/fielld/show.svg";
 import HideIcon from "@/icons/fielld/hide.svg";
 import ClearIcon from "@/icons/fielld/clear.svg";
-
-// RTL Theme & Cache Configuration
-const theme = createTheme({ direction: "rtl" });
-const cacheRtl = createCache({
-  key: "muirtl",
-  stylisPlugins: [prefixer, rtlPlugin],
-});
+import { useFieldForm } from "./hooks/useFieldForm";
 
 const FieldForm: FC<IFieldForm> = ({
   error,
@@ -33,15 +23,16 @@ const FieldForm: FC<IFieldForm> = ({
   onFocus,
   disabled,
 }) => {
-  const id = useId();
-  const [showPassword, setShowPassword] = useState(false);
-
-  const handleClear = useCallback(() => setValue(""), [setValue]);
-
-  const toggleShowPassword = useCallback(() => {
-    setShowPassword((prev) => !prev);
-  }, []);
-
+  const {
+    id,
+    showPassword,
+    toggleShowPassword,
+    handleClear,
+    errorLength,
+    lengthValue,
+    theme,
+    cacheRtl,
+  } = useFieldForm({ maxLength, setValue, fieldValue });
   const endAdornment = useMemo(() => {
     if (!fieldValue) return null;
 
@@ -68,13 +59,6 @@ const FieldForm: FC<IFieldForm> = ({
       </InputAdornment>
     );
   }, [handleClear, showPassword, toggleShowPassword, type, fieldValue]);
-
-  const lengthValue = useMemo(() => String(fieldValue).length, [fieldValue]);
-
-  const errorLength = useMemo(
-    () => maxLength === lengthValue,
-    [maxLength, lengthValue]
-  );
 
   return (
     <CacheProvider value={cacheRtl}>

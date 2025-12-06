@@ -1,11 +1,11 @@
-export interface IValueFieldSelect {
+export type IValueFieldSelect = {
   value: string | boolean;
   label: string;
-}
+} | null;
 
 export interface IFormField<T> {
   error?: boolean;
-  label: string;
+  label?: string;
   helperText?: string | boolean;
   setValue: (key: T) => void;
 }
